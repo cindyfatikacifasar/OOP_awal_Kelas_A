@@ -41,7 +41,8 @@ class mahasiswa {
   }
   }
       
-$Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'penjahat');
+$Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
+    
 echo $Furqon->get_name();
 echo "<br>";
 echo $Furqon->get_nim();
