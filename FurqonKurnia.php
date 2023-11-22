@@ -3,6 +3,7 @@
 <body>
 <?php
 class mahasiswa {
+  
   // Properties
   private $name;
   private $nim;
