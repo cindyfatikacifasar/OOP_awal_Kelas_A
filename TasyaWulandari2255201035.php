@@ -1,50 +1,48 @@
-<!DOCTYPE html>
-<html>
-<body>
+
 
 
 
 <?php
 class Mahasiswa {
   // Properties
-  public $name;
-  public $nim;
-  public $matkul;
+  private $name;
+  private $nim;
+  private $matkul;
+  private $citacita;
 
   // Methods
-  function set_name($name) {
-    $this->name = $name;
+  function __construct($name, $nim, $matkul, $citacita)
+  {
+      $this->name = $name;
+      $this->nim = $nim;
+      $this->matkul = $matkul;
+      $this->citacita = $citacita;
   }
   function get_name() {
     return $this->name;
   }
-  function set_nim($nim) {
-    $this->name = $name;
-  }
+
   function get_nim() {
     return $this->nim;
   }
-  function set_matkul($matkul) {
-    $this->matkul = $matkul;
-  }
+ 
   function get_matkul() {
     return $this->matkul;
   }
+  function get_citacita()
+  {
+      return $this->citacita;
+  }
 }
 
-$tasya = new Mahasiswa();
-$nim = new Mahasiswa();
-$matkul = new Mahasiswa();
-$tasya->set_name('Tasya Wulandari');
-$nim->set_name('2255201035');
-$matkul->set_name('pbo');
+$tasya = new mahasiswa('tasya', '2255201035', 'PBO', 'dokter');
 
-echo 'Nama : ' . $tasya->get_name();
-echo "<br>";
-echo 'nim: ' . $nim->get_name();
-echo "<br>";
-echo 'matkul: ' . $matkul->get_name();
+echo "Name: " . $tasya->get_name();
+echo "\n";
+echo "nim: " . $tasya->get_nim();
+echo "\n";
+echo "matkul: " . $tasya->get_matkul();
+echo "\n";
+echo "citacita: " . $tasya->get_citacita();
 ?>
  
-</body>
-</html>

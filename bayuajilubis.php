@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+
 <?php
 class mahasiswa {
   // Properties
@@ -8,11 +9,11 @@ class mahasiswa {
   private $nim;
   private $matkul;
   private $cita_cita;
+  
 
   // Methods
-
-  function __construct ($name, $nim, $matkul, $cita_cita){
-  	$this->name = $name;
+  function __construct($name, $nim, $matkul,$cita_cita) {
+    $this->nama = $nama;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita_cita = $cita_cita;
@@ -31,15 +32,15 @@ class mahasiswa {
   }
 }
 
-$Rendi = new mahasiswa('Rendi Rapitra', '2255201029', 'pbo', 'Main Bola');
-echo $Rendi->get_name();
+$bayu = new mahasiswa('bayu aji lubis', '2255201014', 'PBO', 'Dokter');
+echo $bayu->get_name();
 echo "<br>";
-echo $Rendi->get_nim();
+echo $bayu->get_nim();
 echo "<br>";
-echo $Rendi->get_matkul();
+echo $bayu->get_matkul();
 echo "<br>";
-echo $Rendi->get_cita_cita();
-
+echo $bayu->get_cita_cita();
 ?>
-
+ 
 </body>
+</html>

@@ -7,43 +7,44 @@
 <?php
 class Mahasiswa {
   // Properties
-  public $name;
-  public $nim;
-  public $matkul;
+  private $name;
+  private $nim;
+  private $matkul;
+  private $citacita;
 
   // Methods
-  function set_name($name) {
+  function_construct($name, $nim, $matkul, $citacita) {
     $this->name = $name;
+    $this->nim = $nim;
+    $this->matkul = $matkul;
+    $this->citacita = $citacita;
   }
   function get_name() {
     return $this->name;
   }
-  function set_nim($nim) {
-    $this->name = $name;
-  }
+
   function get_nim() {
     return $this->nim;
   }
-  function set_matkul($matkul) {
-    $this->matkul = $matkul;
-  }
+
   function get_matkul() {
     return $this->matkul;
   }
+  function get_citacita() {
+    return $this->citacita;
+  }
 }
 
-$cindy = new Mahasiswa();
-$nim = new Mahasiswa();
-$matkul = new Mahasiswa();
-$cindy->set_name('Cindy Fatika Sari');
-$nim->set_name('2255201003');
-$matkul->set_name('pbo');
+$cindy = new Mahasiswa(cindy','2255201003','PBO','Pilotkereta');
+
 
 echo 'Nama : ' . $cindy->get_name();
 echo "<br>";
 echo 'nim: ' . $nim->get_name();
 echo "<br>";
 echo 'matkul: ' . $matkul->get_name();
+echo "<br>";
+echo 'citacita: ' . $cindy->get_citacita();
 ?>
  
 </body>

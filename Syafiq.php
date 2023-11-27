@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+
 <?php
 class mahasiswa {
   // Properties
@@ -10,7 +11,6 @@ class mahasiswa {
   private $cita_cita;
 
   // Methods
-
   function __construct ($name, $nim, $matkul, $cita_cita){
   	$this->name = $name;
     $this->nim = $nim;
@@ -31,15 +31,16 @@ class mahasiswa {
   }
 }
 
-$Rendi = new mahasiswa('Rendi Rapitra', '2255201029', 'pbo', 'Main Bola');
-echo $Rendi->get_name();
+$syfq = new mahasiswa('muhammad Syafiq firdaus Affan', '2255201025', 'pbo', 'mentri');
+echo $syfq->get_name();
 echo "<br>";
-echo $Rendi->get_nim();
+echo $syfq->get_nim();
 echo "<br>";
-echo $Rendi->get_matkul();
+echo $syfq->get_matkul();
 echo "<br>";
-echo $Rendi->get_cita_cita();
+echo $syfq->get_cita_cita();
 
 ?>
-
+ 
 </body>
+</html>

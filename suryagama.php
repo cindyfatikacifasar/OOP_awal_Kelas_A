@@ -24,22 +24,34 @@ class mahasiswa
         return $this->nim;
     }
 
-    function get_matkul()
+    protected function get_matkul()
     {
         return $this->matkul;
     }
-    function get_citacita()
+    protected function get_citacita()
     {
         return $this->citacita;
     }
+    function __destruct()
+    {
+        echo "\n ini akhir dari class mahasiswa {$this->name}.";
+    }
 }
+class organisasi extends mahasiswa
+{
+    function hima()
+    {
+        echo "Name: " . $this->get_name();
+        echo "\n";
+        echo "Nim: " . $this->get_nim();
+        echo "\n";
+        echo "Matkul: " . $this->get_matkul();
+        echo "\n";
+        echo "Cita-cita: " . $this->get_citacita();
+        echo "\n";
+        echo "Organisasi : Hima";
+    }
 
-$surya = new mahasiswa('gama', '2255201045', 'PBO', 'menjadi ultramen');
-
-echo "Name: " . $surya->get_name();
-echo "\n";
-echo "nim: " . $surya->get_nim();
-echo "\n";
-echo "matkul: " . $surya->get_matkul();
-echo "\n";
-echo "citacita: " . $surya->get_citacita();
+}
+$surya = new organisasi('gama', '2255201045', 'PBO', 'menjadi ultramen');
+$surya->Hima();

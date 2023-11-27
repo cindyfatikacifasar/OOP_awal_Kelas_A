@@ -1,45 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
-class mahasiswa
-{
+class mahasiswa {
   // Properties
   private $name;
   private $nim;
   private $matkul;
+  private $cita_cita;
 
   // Methods
-  function set_name($name)
-  {
-    $this->name = $name;
+  function __construct ($name, $nim, $matkul, $cita_cita){
+  	$this->name = $name;
+    $this->nim = $nim;
+    $this->matkul = $matkul;
+    $this->cita_cita = $cita_cita;
   }
-  function get_name()
-  {
+  function get_name() {
     return $this->name;
   }
-  function set_matkul($matkul)
-  {
-    $this->matkul = $matkul;
-  }
-  function get_matkul()
-  {
-    return $this->matkul;
-  }
-  function set_nim($nim)
-  {
-    $this->nim = $nim;
-  }
-  function get_nim()
-  {
+  function get_nim() {
     return $this->nim;
+  }
+  function get_matkul() {
+  	return $this->matkul;
+  }
+  function get_cita_cita() {
+  	return $this->cita_cita;
   }
 }
 
-$upp = new mahasiswa();
-$upp->set_name('ALHASHIR');
-$upp->set_nim('2255201024');
-$upp->set_matkul('PBO');
-echo "Nama: " . $upp->get_name();
-echo "\n";
-echo "Nim: " . $upp->get_nim();
-echo "\n";
-echo "Matkul: " . $upp->get_matkul();
+$alhashir = new mahasiswa('alhashir', '2255201024', 'pbo', 'menjadi boboiboy');
+echo $alhashir->get_name();
+echo "<br>";
+echo $alhashir->get_nim();
+echo "<br>";
+echo "nim: " .  $alhashir->get_nim();
+echo $alhashir->get_matkul();
+echo "<br>";
+echo "matkul: " . $alhashir->get_matkul();
+echo $alhashir->get_cita_cita();
+
 ?>
+
+</body>

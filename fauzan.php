@@ -5,39 +5,41 @@ class mahasiswa
     private $name;
     private $nim;
     private $mk;
+    private $citacita;
     // Methods
-    function set_name($name)
+    function __construct($name, $nim, $mk, $citacita)
     {
         $this->name = $name;
+        $this->nim = $nim;
+        $this->mk = $mk;
+        $this->citacita = $citacita;
     }
     function get_name()
     {
         return $this->name;
     }
-    function set_nim($nim)
-    {
-        $this->nim = $nim;
-    }
+
     function get_nim()
     {
         return $this->nim;
     }
-    function set_mk($mk)
-    {
-        $this->mk = $mk;
-    }
+
     function get_mk()
     {
         return $this->mk;
     }
+    function get_citacita()
+    {
+        return $this->citacita;
+    }
 }
 
-$fauzan = new mahasiswa();
-$fauzan->set_name('fauzan');
-$fauzan->set_nim('2255201023');
-$fauzan->set_mk('pbo');
+$fauzan = new mahasiswa('fzn', '2255201023', 'PBO', 'menjadi power ranger putih');
+
 echo "Name: " . $fauzan->get_name();
 echo "\n";
 echo "nim: " . $fauzan->get_nim();
 echo "\n";
 echo "mk: " . $fauzan->get_mk();
+echo "\n";
+echo "citacita: " . $fauzan->get_citacita();

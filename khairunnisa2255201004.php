@@ -7,43 +7,48 @@
 <?php
 class Mahasiswa {
   // Properties
-  public $name;
-  public $nim;
-  public $matkul;
+  private $name;
+  private $nim;
+  private $matkul;
+  private $cita_cita;
+
 
   // Methods
-  function set_name($name) {
-    $this->name = $name;
+
+  function __construct($name, $nim, $matkul, $cita_cita)
+  {
+      $this->name = $name;
+      $this->nim = $nim;
+      $this->matkul = $matkul;
+      $this->cita_cita = $cita_cita;
   }
+  
   function get_name() {
     return $this->name;
   }
-  function set_nim($nim) {
-    $this->name = $name;
-  }
+  
   function get_nim() {
     return $this->nim;
   }
-  function set_matkul($matkul) {
-    $this->matkul = $matkul;
-  }
+  
   function get_matkul() {
     return $this->matkul;
   }
+  function get_cita_cita() {
+    return $this->cita_cita;
+  }
 }
 
-$cindy = new Mahasiswa();
-$nim = new Mahasiswa();
-$matkul = new Mahasiswa();
-$cindy->set_name('Khairunnisa');
-$nim->set_name('2255201004');
-$matkul->set_name('pbo');
 
-echo 'Nama : ' . $cindy->get_name();
-echo "<br>";
-echo 'nim: ' . $nim->get_name();
-echo "<br>";
-echo 'matkul: ' . $matkul->get_name();
+$nisa = new mahasiswa('nisa', '2255201004', 'PBO', 'penyanyi');
+
+echo "Name: " . $nisa->get_name();
+echo "\n";
+echo "nim: " . $nisa->get_nim();
+echo "\n";
+echo "matkul: " . $nisa->get_matkul();
+echo "\n";
+echo "citacita: " . $nisa->get_cita_cita();
 ?>
  
 </body>

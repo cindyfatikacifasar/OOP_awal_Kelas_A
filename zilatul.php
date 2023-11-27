@@ -5,41 +5,43 @@ class mahasiswa
   private $name;
   private $nim;
   private $matkul;
+  private $citacita;
 
   // Methods
-  function set_name($name)
-  {
-    $this->name = $name;
-  }
-  function get_name()
-  {
-    return $this->name;
-  }
-  function set_matkul($matkul)
-  {
-    $this->matkul = $matkul;
-  }
-  function get_matkul()
-  {
-    return $this->matkul;
-  }
-  function set_nim($nim)
-  {
-    $this->nim = $nim;
-  }
-  function get_nim()
-  {
-    return $this->nim;
-  }
+  function __construct($name, $nim, $matkul, $citacita)
+    {
+        $this->name = $name;
+        $this->nim = $nim;
+        $this->matkul = $matkul;
+        $this->citacita = $citacita;
+    }
+    function get_name()
+    {
+        return $this->name;
+    }
+
+    function get_nim()
+    {
+        return $this->nim;
+    }
+
+    function get_matkul()
+    {
+        return $this->matkul;
+    }
+    function get_citacita()
+    {
+        return $this->citacita;
+    }
 }
 
-$upp = new mahasiswa();
-$upp->set_name('zilla tulhusna');
-$upp->set_nim('2255201048');
-$upp->set_matkul('PBO');
-echo "Nama: " . $upp->get_name();
+
+$zilla = new mahasiswa('zilla', '2255201048', 'PBO', 'menjadi istri boboiboy');
+
+echo "Name: " . $zilla->get_name();
 echo "\n";
-echo "Nim: " . $upp->get_nim();
+echo "nim: " . $zilla->get_nim();
 echo "\n";
-echo "Matkul: " . $upp->get_matkul();
-?>
+echo "matkul: " . $zilla->get_matkul();
+echo "\n";
+echo "citacita: " . $zilla->get_citacita();
