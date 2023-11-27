@@ -34,11 +34,13 @@ class mahasiswa
     }
     function __destruct()
     {
-        echo "\n ini akhir dari class mahasiswa {$this->name}.";
+        echo "\nini akhir dari class mahasiswa {$this->name}.";
     }
 }
 class organisasi extends mahasiswa
 {
+    protected $NamaOrganisasi;
+    protected $TahunGabung;
     function hima()
     {
         echo "Name: " . $this->get_name();
@@ -49,9 +51,34 @@ class organisasi extends mahasiswa
         echo "\n";
         echo "Cita-cita: " . $this->get_citacita();
         echo "\n";
-        echo "Organisasi : Hima";
+    }
+    function set_namaorganisasi($NamaOrganisasi)
+    {
+        $this->NamaOrganisasi = $NamaOrganisasi;
+    }
+    function set_tahun($TahunGabung)
+    {
+        $this->TahunGabung = $TahunGabung;
+    }
+    protected function get_namaorganisasi()
+    {
+        return $this->NamaOrganisasi;
+    }
+    protected function get_tahun()
+    {
+        return $this->TahunGabung;
+    }
+    function namatahun()
+    {
+        echo "\n";
+        echo "Nama Organisasi: " . $this->get_namaorganisasi();
+        echo "\n";
+        echo "Tahun Gabung: " . $this->get_tahun();
     }
 
 }
 $surya = new organisasi('gama', '2255201045', 'PBO', 'menjadi ultramen');
+$surya->set_namaorganisasi('himaaaatika');
+$surya->set_tahun('2000 Tahun Sebelum Masehi');
 $surya->Hima();
+$surya->namatahun();
