@@ -12,8 +12,6 @@ class mahasiswa {
   public $organisasi;
 
   // Methods
-  function set_name($name) {
-    $this->name = $name;
   function __construct ($name, $nim, $matkul, $cita){
   	$this->name = $name;
     $this->nim = $nim;
@@ -24,26 +22,14 @@ class mahasiswa {
   function get_name() {
     return $this->name;
   }
-  function set_nim($nim) {
-    $this->nim = $nim;
-  }
   function get_nim() {
     return $this->nim;
   }
- private function set_matkul($matkul) {
-  	$this->matkul = $matkul;
-  }
-  function get_matkul() {
+  private function get_matkul() {
   	return $this->matkul;
   }
- protected function set_cita($cita);
-    $this->cita = $cita;
-  {
-  function get_cita() {
+  protected function get_cita() {
   	return $this->cita;
-  }
-    function set_organisasi($organisasi){
-      $this->organisasi = $organisasi;
   }
     function get_matkul() {
       return $this->organisasi;
@@ -52,7 +38,7 @@ class mahasiswa {
 function __destruct() {
   echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
     
-$Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
+$Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pendukung Ganjar Jadi Presiden');
     
 echo $Furqon->get_name();
 echo "<br>";
