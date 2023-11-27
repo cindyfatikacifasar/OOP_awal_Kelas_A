@@ -24,26 +24,35 @@ class mahasiswa
     {
         return $this->nim;
     }
-    function get_matkul() 
+    protected function get_matkul() 
     {
   	    return $this->matkul;
     }
-    function get_cita() 
+    protected function get_cita() 
     {
   	    return $this->cita;
     }
-   
+    function __destruct() {
+        echo "<br>Ini akhir dari class mahasiswa {$this->name}";
+    }
+}
+    class organisasi extends mahasiswa
+    {
+    function hima()
+    {
+     echo "Nama: " . $Furrz->get_name();
+     echo "<br>";
+     echo "nim: " .  $Furrz->get_nim();
+     echo "<br>";
+     echo "matkul: " . $Furrz->get_matkul();
+     echo "<br>";
+     echo "Cita-Cita: " . $Furrz->get_cita();
+     echo "<br>";
+     echo "Organisasi: HIMA";
+    }
+}       
 $Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
-    
-echo $Furrz->get_name();
-echo "<br>";
-echo $Furrz->get_nim();
-echo "<br>";
-echo "nim: " .  $Furrz->get_nim();
-echo $Furrz->get_matkul();
-echo "<br>";
-echo "matkul: " . $Furrz->get_matkul();
-echo $Furrz->get_cita();
+$Furrz->Hima();   
 
 ?>
 
