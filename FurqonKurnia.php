@@ -5,10 +5,11 @@
 class mahasiswa {
   
   // Properties
-  private $name;
-  private $nim;
+  public $name;
+  public $nim;
   private $matkul;
-  private $cita;
+  protected $cita;
+  public $organisasi;
 
   // Methods
   function set_name($name) {
@@ -18,6 +19,7 @@ class mahasiswa {
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita = $cita;
+    $this->organisasi = $organisasi;
   }
   function get_name() {
     return $this->name;
@@ -28,20 +30,28 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function set_matkul($matkul) {
+ private function set_matkul($matkul) {
   	$this->matkul = $matkul;
   }
   function get_matkul() {
   	return $this->matkul;
   }
-  function set_cita($cita);
+ protected function set_cita($cita);
     $this->cita = $cita;
   {
   function get_cita() {
   	return $this->cita;
   }
+    function set_organisasi($organisasi){
+      $this->organisasi = $organisasi;
   }
-      
+    function get_matkul() {
+      return $this->organisasi;
+    }
+
+function __destruct() {
+  echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
+    
 $Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
     
 echo $Furqon->get_name();
@@ -53,6 +63,9 @@ echo $Furqon->get_matkul();
 echo "<br>";
 echo "matkul: " . $Furqon->get_matkul();
 echo $Furqon->get_cita();
+echo "<br>";
+echo "Organisasi: " . $furqon->get_organisasi();
+echo $furqon->get_organisasi;
 
 ?>
 
