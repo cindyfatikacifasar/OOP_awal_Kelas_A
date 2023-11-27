@@ -26,21 +26,36 @@ class mahasiswa
         return $this->nim;
     }
     
-    function get_mata_kuliah()
+    protected function get_mata_kuliah()
     {
         return $this->mata_kuliah;
     }
-    function get_citacita()
+    protected function get_citacita()
     {
         return $this->citacita;
     }
-}
+    function __destruct()
+    {
+        echo "\nini akhir dari class mahasiswa {$this->name}";
+    }
 
-$catur = new mahasiswa('catur', '2255201015', 'PBO', 'menjadi power ranger hitam');
-echo "name: " . $catur->get_name();
-echo "\n";
-echo "nim: " . $catur->get_nim();
-echo "\n";
-echo "mata kuliah: " . $catur->get_mata_kuliah();
-echo "\n";
-echo "cita cita: " . $catur->get_citacita();
+}
+// class turunan organisasi
+class organisasi extends mahasiswa
+{
+    function hima()
+    {
+        echo "name: " . $this->get_name();
+        echo "\n";
+        echo "nim: " . $this->get_nim();
+        echo "\n";
+        echo "mata kuliah: " . $this->get_mata_kuliah();
+        echo "\n";
+        echo "cita cita: " . $this->get_citacita();
+        echo "\n";
+        echo "organisasi: Hima ";
+        
+    }
+}
+$catur = new organisasi('catur', '2255201015', 'PBO', 'menjadi power ranger hitam');
+$catur->hima();
