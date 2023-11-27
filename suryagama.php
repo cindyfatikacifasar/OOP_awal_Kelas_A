@@ -51,13 +51,14 @@ class organisasi extends mahasiswa
         echo "\n";
         echo "Cita-cita: " . $this->get_citacita();
         echo "\n";
+        echo "Nama Organisasi: " . $this->get_namaorganisasi();
+        echo "\n";
+        echo "Tahun Gabung: " . $this->get_tahun();
     }
-    function set_namaorganisasi($NamaOrganisasi)
+    function __construct($name, $nim, $matkul, $citacita, $NamaOrganisasi, $TahunGabung)
     {
+        parent::__construct($name, $nim, $matkul, $citacita);
         $this->NamaOrganisasi = $NamaOrganisasi;
-    }
-    function set_tahun($TahunGabung)
-    {
         $this->TahunGabung = $TahunGabung;
     }
     protected function get_namaorganisasi()
@@ -77,8 +78,5 @@ class organisasi extends mahasiswa
     }
 
 }
-$surya = new organisasi('gama', '2255201045', 'PBO', 'menjadi ultramen');
-$surya->set_namaorganisasi('himaaaatika');
-$surya->set_tahun('2000 Tahun Sebelum Masehi');
+$surya = new organisasi('gama', '2255201045', 'PBO', 'menjadi ultramen', 'himaaaatika', '2000 Tahun Sebelum Masehi');
 $surya->Hima();
-$surya->namatahun();
