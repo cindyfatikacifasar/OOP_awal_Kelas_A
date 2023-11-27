@@ -4,40 +4,40 @@
 <?php
 class mahasiswa
 { 
-  // Properties
-  public $name;
-  public $nim;
-  private $matkul;
-  protected $cita;
-  public $organisasi;
-  // Methods
-  function __construct ($name, $nim, $matkul, $cita){
+    // Properties
+    public $name;
+    public $nim;
+    private $matkul;
+    protected $cita;
+    public $organisasi;
+    // Methods
+    function __construct ($name, $nim, $matkul, $cita, $organisasi){
   	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita = $cita;
     $this->organisasi = $organisasi;
-  }
-  function get_name()
-  {
-    return $this->name;
-  }
-  function get_nim() 
-  {
-    return $this->nim;
-  }
-  private function get_matkul() 
-  {
-  	return $this->matkul;
-  }
-  protected function get_cita() 
-  {
-  	return $this->cita;
-  }
+    }
+    function get_name()
+    {
+        return $this->name;
+    }
+    function get_nim() 
+    {
+        return $this->nim;
+    }
+    private function get_matkul() 
+    {
+  	    return $this->matkul;
+    }
+    protected function get_cita() 
+    {
+  	    return $this->cita;
+    }
     function get_organisasi() 
-  {
-    return $this->organisasi;
-  }
+    {
+        return $this->organisasi;
+    }
 
 function __destruct() {
   echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
