@@ -1,5 +1,5 @@
 <?php
-class Ryan {
+class Mahasiswa {
   // Properties
   private $nama;
   private $nim;
@@ -22,23 +22,37 @@ class Ryan {
     return $this->nim;
   }
 
-  function get_matkul() {
+  protected function get_matkul() {
     return $this->matkul;
   }
 
-   function get_citacita() {
+   protected function get_citacita() {
     return $this->citacita;
+  }
+
+  function __destruct() {
+    echo "\nIni Akhir Dari Class Mahasiswa {$this->nama}";
   }
 
 }
 
-$Ryan = new Ryan("M.RYAN_MAULANA_NST", "2255201022", "PBO", "Pengusaha");
-echo $Ryan->get_nama();
-echo "\n";
-echo $Ryan->get_nim();
-echo "\n";
-echo $Ryan->get_matkul();
-echo "\n";
-echo $Ryan->get_citacita();
+//Class Turunan Organisasi
+class Organisasi extends Mahasiswa {
+  function HIMA() {
+    echo "Nama: " . $this->get_nama();
+    echo "\n";
+    echo "Nim: " . $this->get_nim ();
+    echo "\n";
+    echo "Matkul: " . $this->get_matkul ();
+    echo "\n";
+    echo "Cita-cita: " . $this->get_citacita();
+    echo "\n";
+    echo "Organisasi : HIMA"; 
+}
+
+}
+
+$Ryan = new Organisasi("M.RYAN_MAULANA_NST", "2255201022", "PBO", "Pengusaha");
+$Ryan->HIMA();
 
 ?>
