@@ -42,20 +42,20 @@ class mahasiswa
 function __destruct() {
   echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
     
-$Furqon = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pendukung Ganjar Jadi Presiden');
+$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pendukung Ganjar Jadi Presiden');
     
-echo $Furqon->get_name();
+echo $Furrz->get_name();
 echo "<br>";
-echo $Furqon->get_nim();
+echo $Furrz->get_nim();
 echo "<br>";
-echo "nim: " .  $Furqon->get_nim();
-echo $Furqon->get_matkul();
+echo "nim: " .  $Furrz->get_nim();
+echo $Furrz->get_matkul();
 echo "<br>";
-echo "matkul: " . $Furqon->get_matkul();
-echo $Furqon->get_cita();
+echo "matkul: " . $Furrz->get_matkul();
+echo $Furrz->get_cita();
 echo "<br>";
-echo "Organisasi: " . $furqon->get_organisasi();
-echo $furqon->get_organisasi;
+echo "Organisasi: " . $Furrz->get_organisasi();
+echo $Furrz->get_organisasi;
 
 ?>
 
