@@ -40,9 +40,34 @@ class mahasiswa
     }
 
 }
+
 // class turunan organisasi
 class organisasi extends mahasiswa
 {
+    // properties
+    public $organisasi;
+    public $tahun;
+
+    // methods
+    function set_organisasi($organisasi)
+    {
+        $this->organisasi = $organisasi;
+    }
+
+    function set_tahun($tahun)
+    {
+        $this->tahun = $tahun;
+    }
+    
+    protected function get_organisasi()
+    {
+        return $this->organisasi;
+    }
+    protected function get_tahun()
+    {
+        return $this->tahun;
+    }
+
     function hima()
     {
         echo "name: " . $this->get_name();
@@ -53,9 +78,14 @@ class organisasi extends mahasiswa
         echo "\n";
         echo "cita cita: " . $this->get_citacita();
         echo "\n";
-        echo "organisasi: Hima ";
+        echo "organisasi: " . $this->get_organisasi();
+        echo "\n";
+        echo "tahungabung: " . $this->get_tahun();
+
         
     }
 }
 $catur = new organisasi('catur', '2255201015', 'PBO', 'menjadi power ranger hitam');
+$catur->set_organisasi("hima");
+$catur->set_tahun("2069");
 $catur->hima();
