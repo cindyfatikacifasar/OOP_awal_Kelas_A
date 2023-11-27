@@ -9,14 +9,12 @@ class mahasiswa
     private $nim;
     private $matkul;
     private $cita;
-    private $organisasi;
     // Methods
-    function __construct ($name, $nim, $matkul, $cita, $organisasi){
+    function __construct ($name, $nim, $matkul, $cita){
   	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita = $cita;
-    $this->organisasi = $organisasi;
     }
     function get_name()
     {
@@ -34,16 +32,8 @@ class mahasiswa
     {
   	    return $this->cita;
     }
-    function get_organisasi() 
-    {
-        return $this->organisasi;
-    }
-
-function __destruct() {
-  echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
-    }
-    
-$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pendukung Ganjar Jadi Presiden');
+   
+$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
     
 echo $Furrz->get_name();
 echo "<br>";
@@ -54,9 +44,6 @@ echo $Furrz->get_matkul();
 echo "<br>";
 echo "matkul: " . $Furrz->get_matkul();
 echo $Furrz->get_cita();
-echo "<br>";
-echo "Organisasi: " . $Furrz->get_organisasi();
-echo $Furrz->get_organisasi;
 
 ?>
 
