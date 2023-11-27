@@ -45,8 +45,8 @@ class mahasiswa
 class organisasi extends mahasiswa
 {
     // properties
-    public $organisasi;
-    public $tahun;
+    protected $organisasi;
+    protected $tahun;
 
     // methods
     function __construct($name, $nim, $mata_kuliah, $citacita, $organisasi, $tahun)
