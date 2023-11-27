@@ -24,11 +24,11 @@ class mahasiswa
     {
         return $this->nim;
     }
-    function get_matkul() 
+    protected function get_matkul() 
     {
   	    return $this->matkul;
     }
-    function get_cita() 
+    protected function get_cita() 
     {
   	    return $this->cita;
     }
