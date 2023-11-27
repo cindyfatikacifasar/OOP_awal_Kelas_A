@@ -5,11 +5,11 @@
 class mahasiswa
 { 
     // Properties
-    public $name;
-    public $nim;
+    private $name;
+    private $nim;
     private $matkul;
-    protected $cita;
-    public $organisasi;
+    private $cita;
+    private $organisasi;
     // Methods
     function __construct ($name, $nim, $matkul, $cita, $organisasi){
   	$this->name = $name;
@@ -26,11 +26,11 @@ class mahasiswa
     {
         return $this->nim;
     }
-    private function get_matkul() 
+    function get_matkul() 
     {
   	    return $this->matkul;
     }
-    protected function get_cita() 
+    function get_cita() 
     {
   	    return $this->cita;
     }
@@ -41,6 +41,7 @@ class mahasiswa
 
 function __destruct() {
   echo "Saya adalah mahasiswa dari organisasi {$this->organisasi}";
+    }
     
 $Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pendukung Ganjar Jadi Presiden');
     
