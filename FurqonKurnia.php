@@ -2,8 +2,8 @@
 <html>
 <body>
 <?php
-class mahasiswa {
-  
+
+class mahasiswa { 
   // Properties
   public $name;
   public $nim;
@@ -22,15 +22,19 @@ class mahasiswa {
   function get_name() {
     return $this->name;
   }
+  
   function get_nim() {
     return $this->nim;
   }
+  
   private function get_matkul() {
   	return $this->matkul;
   }
+  
   protected function get_cita() {
   	return $this->cita;
   }
+  
     function get_matkul() {
       return $this->organisasi;
     }
