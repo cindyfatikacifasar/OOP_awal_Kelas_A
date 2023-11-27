@@ -49,13 +49,10 @@ class organisasi extends mahasiswa
     public $tahun;
 
     // methods
-    function set_organisasi($organisasi)
+    function __construct($name, $nim, $mata_kuliah, $citacita, $organisasi, $tahun)
     {
+        parent::__construct($name, $nim, $mata_kuliah, $citacita);
         $this->organisasi = $organisasi;
-    }
-
-    function set_tahun($tahun)
-    {
         $this->tahun = $tahun;
     }
     
@@ -70,22 +67,19 @@ class organisasi extends mahasiswa
 
     function hima()
     {
-        echo "name: " . $this->get_name();
+        echo "Name: " . $this->get_name();
         echo "\n";
-        echo "nim: " . $this->get_nim();
+        echo "Nim: " . $this->get_nim();
         echo "\n";
-        echo "mata kuliah: " . $this->get_mata_kuliah();
+        echo "Mata kuliah: " . $this->get_mata_kuliah();
         echo "\n";
-        echo "cita cita: " . $this->get_citacita();
+        echo "Cita cita: " . $this->get_citacita();
         echo "\n";
-        echo "organisasi: " . $this->get_organisasi();
+        echo "Nama organisasi: " . $this->get_organisasi();
         echo "\n";
-        echo "tahungabung: " . $this->get_tahun();
+        echo "Tahun gabung: " . $this->get_tahun();
 
-        
     }
 }
-$catur = new organisasi('catur', '2255201015', 'PBO', 'menjadi power ranger hitam');
-$catur->set_organisasi("hima");
-$catur->set_tahun("2069");
+$catur = new organisasi('catur', '2255201015', 'PBO', 'menjadi power ranger hitam','hima','2069');
 $catur->hima();
