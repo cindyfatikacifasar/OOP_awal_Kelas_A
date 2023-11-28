@@ -23,15 +23,19 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
+  function __destruct() {
+    echo "<br> ini class akhir mahasiswa {$this->name}";
+  }
 }
-
-$syfq = new mahasiswa('muhammad Syafiq firdaus Affan', '2255201025', 'pbo', 'mentri');
+ class organisasi extends mahasiswa
+   {
+  function hima() {
 echo $syfq->get_name();
 echo "<br>";
 echo $syfq->get_nim();
@@ -39,7 +43,12 @@ echo "<br>";
 echo $syfq->get_matkul();
 echo "<br>";
 echo $syfq->get_cita_cita();
-
+echo "<br>";
+echo "Organisasi: Hima";
+  }
+}
+$syfq = new mahasiswa('muhammad Syafiq firdaus Affan', '2255201025', 'pbo', 'mentri');
+$syfq->hima();
 ?>
  
 </body>
