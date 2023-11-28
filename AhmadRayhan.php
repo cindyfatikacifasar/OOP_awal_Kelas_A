@@ -13,7 +13,6 @@ class mahasiswa {
   function set_name($name) {
     $this->name = $name;
   function __construct ($name, $nim, $matkul, $cita_cita){
-  	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita_cita = $cita_cita;
@@ -24,22 +23,33 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
+    function __destruct() {
+      echo "<br> ini akhir class mahasiswa {$this->name}";
+  }
+ }
 }
+   class 0rganisasi extends mahasiswa
+     {
+       function hima ()
+     {
+     echo $rehan->get_name();
+     echo "<br>";
+     echo $rehan->get_nim();
+     echo "<br>";
+     echo $rehan->get_matkul();
+     echo "<br>";
+     echo $rehan->get_cita_cita();
+     echo "<br>";
+     echo "Organisasi: Hima"
 
 $rehan = new mahasiswa('Ahmad Rayhan', '2255201053', 'pbo', 'Pembalap');
-echo $rehan->get_name();
-echo "<br>";
-echo $rehan->get_nim();
-echo "<br>";
-echo $rehan->get_matkul();
-echo "<br>";
-echo $rehan->get_cita_cita();
+$rehan->hima();
 ?>
 
 </body>
