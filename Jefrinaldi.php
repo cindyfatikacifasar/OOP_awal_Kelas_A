@@ -23,16 +23,21 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_citacita() {
+  protected function get_citacita() {
   	return $this->citacita;
   }
+  function __destruct() 
+  {
+    echo "<br> Ini akhir class dari mahasiswa {$this->name}";
 }
-
-$Jefri = new mahasiswa('Jefrinaldi', '2255201021', 'pbo', 'Hebaatt');
-
+ }
+class organisasi extends mahasiswa
+  {
+    function hima
+    {
 echo $Jefri->get_name();
 echo "<br>";
 echo $Jefri->get_nim();
@@ -40,6 +45,13 @@ echo "<br>";
 echo $Jefri->get_matkul();
 echo "<br>";
 echo $Jefri->get_citacita();
+echo "<br">;
+echo "Organisasi: Hima";
+}
+  }
+
+$Jefri = new mahasiswa('Jefrinaldi', '2255201021', 'pbo', 'Hebaatt');
+$Jefri->hima();
 
 ?>
 </body>
