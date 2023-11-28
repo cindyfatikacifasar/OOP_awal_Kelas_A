@@ -10,9 +10,8 @@ class mahasiswa {
   private $cita_cita;
 
   // Methods
-  function set_name($name) {
-    $this->name = $name;
   function __construct ($name, $nim, $matkul, $cita_cita){
+    $this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita_cita = $cita_cita;
@@ -33,8 +32,7 @@ class mahasiswa {
       echo "<br> ini akhir class mahasiswa {$this->name}";
   }
  }
-}
-   class 0rganisasi extends mahasiswa
+   class organisasi extends mahasiswa
      {
        function hima ()
      {
