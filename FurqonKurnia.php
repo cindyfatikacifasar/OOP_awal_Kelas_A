@@ -10,13 +10,11 @@ class mahasiswa
     private $matkul;
     private $cita;
     // Methods
-    function __construct ($name, $nim, $matkul, $cita, $organisasi, $tahungabung){
+    function __construct ($name, $nim, $matkul, $cita){
   	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita = $cita;
-    $this->organisasi = $organisasi;
-    $this->tahungabung = $tahungabung;
     }
     function get_name()
     {
@@ -34,19 +32,8 @@ class mahasiswa
     {
   	    return $this->cita;
     }
-    protected function get_organisasi()
-    {
-        return $this->organisasi;
-    }
-    protected function get_tahungabung()
-    {
-        return $this->tahungabung
-    }
-    function namatahun() {
-    echo "\n";
-    echo "Organisasi: " . $this->get_organisasi();
-    echo "\n";
-    echo "Tahun Gabung: " . $this->get_tahun();
+    function __destruct() {
+    echo "<br>Ini akhir dari class mahasiswa {$this->name}";
   }
 }
     class organisasi extends mahasiswa
