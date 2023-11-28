@@ -24,24 +24,35 @@ class mahasiswa
         return $this->nim;
     }
     
-    function get_matkul()
+    protected function get_matkul()
     {
         return $this->matkul;
     }
-    function get_citacita()
+   protected function get_citacita()
     {
         return $this->citacita;
     }
+    function __destruct() {
+    echo "<br> ini akhir dari class mahasiswa {$this->name}.";
+  }
 }
 
-$rian = new mahasiswa('rian eka putra', '2255201043', 'PBO', 'menjadi proplayer');
+//class turunan organisasi
+class organisasi extends mahasiswa {
+    function hima() {
+        echo "name: " .$this->get_name();
+        echo "<br>";
+        echo "nim: " .$this->get_nim();
+        echo "<br>";
+        echo "matkul: " .$this->get_matkul();
+        echo "<br>";
+        echo "name: " .$this->get_citacita();
+        echo "<br>";
+        echo "organisasi:Hima";
+    }
+}
+$rian = new organisasi('Rian Eka Putra', '2255201043', 'PBO', 'Proplayer');
+$rian->hima();
 
-echo "Name: " . $rian->get_name();
-echo "\n";
-echo "nim: " . $rian->get_nim();
-echo "\n";
-echo "matkul: " . $rian->get_matkul();
-echo "\n";
-echo "citacita: " . $rian->get_citacita();
 ?>
  
