@@ -23,22 +23,33 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
+  function __destruct() {
+    echo "<br>ini adalah akhir dari class mahasiswa {$this->name}";
+  }
 }
-
-$dhifa = new mahasiswa('muhammad dhifa ferdian', '2255201050', 'pbo', 'Pejabat');
-echo $dhifa->get_name();
-echo "<br>";
-echo $dhifa->get_nim();
-echo "<br>";
-echo $dhifa->get_matkul();
-echo "<br>";
-echo $dhifa->get_cita_cita();
+  class organisasi extends mahasiswa
+{
+  function hima()
+  {
+  echo "Nama: ". $dhifa->get_name();
+  echo "<br>";
+  echo "nim: ". $dhifa->get_nim();
+  echo "<br>";
+  echo "matkul:". $dhifa->get_matkul();
+  echo "<br>";
+  echo "cita_cita:". $dhifa->get_cita_cita();
+  echo "<br>";
+  echo "organisasi: HIMA";
+  }
+}
+$dhifa = new mahasiswa('Muhammad Dhifa ferdian', '2255201050', 'PBO', 'Pejabat')
+$dhifa->Hima();
 
 ?>
  
