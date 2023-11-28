@@ -33,26 +33,48 @@ class mahasiswa
   	    return $this->cita;
     }
     function __destruct() {
-        echo "<br>Ini akhir dari class mahasiswa {$this->name}";
-    }
+    echo "<br>Ini akhir dari class mahasiswa {$this->name}";
+  }
 }
+//Class Turunan Organisasi
     class organisasi extends mahasiswa
     {
+    protected $organisasi;
+    protected $tahungabung;
     function hima()
     {
-     echo "Nama: " . $Furrz->get_name();
+     echo "Nama: " . $this->get_name();
      echo "<br>";
-     echo "nim: " .  $Furrz->get_nim();
+     echo "nim: " .  $this->get_nim();
      echo "<br>";
-     echo "matkul: " . $Furrz->get_matkul();
+     echo "matkul: " . $this->get_matkul();
      echo "<br>";
-     echo "Cita-Cita: " . $Furrz->get_cita();
+     echo "Cita-Cita: " . $this->get_cita();
      echo "<br>";
-     echo "Organisasi: HIMA";
+     echo "Organisasi: " . $this->get_organisasi();
+     echo "<br>";
+     echo "Tahun Gabung: " . $this->get_tahungabung();
     }
+    function __construct($name, $nim, $matkul, $cita, $organisasi, $tahungabung) {
+  parent::__construct($name, $nim, $matkul, $cita) ;
+  $this->organisasi = $organisasi;
+  $this->tahungabung = $tahungabung;
+  }
+protected function get_organisasi() {
+  return $this->organisasi;
+  }
+protected function get_tahungabung() {
+  return $this->tahungabung;
+  }
+function namatahun() {
+  echo "<br>";
+  echo "Organisasi: " . $this->get_organisasi();
+  echo "<br>";
+  echo "Tahun Gabung: " . $this->get_tahungabung();
+  }
 }       
-$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
-$Furrz->Hima();   
+$Furrz = new organisasi('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pemuda Pancasila', '2022');
+$Furrz->hima();   
 
 ?>
 
