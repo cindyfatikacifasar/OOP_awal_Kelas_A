@@ -54,6 +54,23 @@ class mahasiswa
      echo "<br>";
      echo "Tahun Gabung: " . $this->get_tahungabung;
     }
+    function __construct($nama, $nim, $matkul, $cita, $organisasi, $tahungabung) {
+  parent::__construct($nama, $nim, $matkul, $cita) ;
+  $this->organisasi = $organisasi;
+  $this->tahungabung = $tahungabung;
+  }
+protected function get_organisasi() {
+  return $this->organisasi;
+  }
+protected function get_tahun() {
+  return $this->gahungabung;
+  }
+function namatahun() {
+  echo "\n";
+  echo "Organisasi: " . $this->get_organisasi();
+  echo "\n";
+  echo "Tahun Gabung: " . $this->get_tahun();
+  }
 }       
 $Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pemuda Pancasila', '2022');
 $Furrz->Hima();   
