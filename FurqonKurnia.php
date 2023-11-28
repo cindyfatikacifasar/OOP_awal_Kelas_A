@@ -68,7 +68,7 @@ class mahasiswa
      echo "Tahun Gabung: " . $this->get_tahungabung;
     }
 }       
-$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
+$Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel', 'Pemuda Pancasila', '2022');
 $Furrz->Hima();   
 
 ?>
