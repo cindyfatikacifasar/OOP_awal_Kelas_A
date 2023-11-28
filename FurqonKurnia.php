@@ -53,7 +53,7 @@ class mahasiswa
      echo "<br>";
      echo "Organisasi: " . $this->get_organisasi();
      echo "<br>";
-     echo "Tahun Gabung: " . $this->get_tahungabung;
+     echo "Tahun Gabung: " . $this->get_tahungabung();
     }
     function __construct($name, $nim, $matkul, $cita, $organisasi, $tahungabung) {
   parent::__construct($name, $nim, $matkul, $cita) ;
