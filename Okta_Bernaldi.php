@@ -23,23 +23,35 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
+  function __destruct() {
+    echo "<br>ini adalah akhir dari class mahasiswa {$this->name}";
+  }
 }
+  class organisasi extends mahasiswa
+{
+  function hima() 
+  {
+echo "Nama: ". $okta->get_name();
+echo "<br>";
+echo "Nim: ". $okta->get_nim();
+echo "<br>";
+echo "Matkul: ". $okta->get_matkul();
+echo "<br>";
+echo "cita_cita: ". $okta->get_cita_cita();
+echo "<br>";
+echo "Organisasi: HIMA";
+  }
+}
+  
 
-$okta = new mahasiswa('Okta Bernaldi', '2255201051', 'pbo', 'Pilot');
-echo $okta->get_name();
-echo "<br>";
-echo $okta->get_nim();
-echo "<br>";
-echo $okta->get_matkul();
-echo "<br>";
-echo $okta->get_cita_cita();
-
+$okta = new mahasiswa('Okta Bernaldi', '2255201051', 'PBO', 'Pilot');
+$okta->Hima();
 ?>
  
 </body>
