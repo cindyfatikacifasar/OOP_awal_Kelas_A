@@ -40,7 +40,9 @@ class mahasiswa
 
 //class turunan organisasi
 class organisasi extends mahasiswa
-{
+{    
+    protected $NamaOrganisasi;
+    protected $TahunGabung;
     function uhuy()
     {
         echo "Name: " . $this->get_name();
@@ -51,12 +53,30 @@ class organisasi extends mahasiswa
         echo "\n";
         echo "Cita-cita: " . $this->get_citacita();
         echo "\n";
-        echo "Organisasi : power ranger community";
+        echo "Organisasi : " . $this->get_namaorganisasi();
+        echo "\n";
+        echo "Tahun Gabung: " . $this->get_tahun();
     }
+
+    function __construct($name, $nim, $mk, $citacita, $NamaOrganisasi, $TahunGabung)
+    {
+        parent::__construct($name, $nim, $mk, $citacita);
+        $this->NamaOrganisasi = $NamaOrganisasi;
+        $this->TahunGabung = $TahunGabung;
+    }
+    protected function get_namaorganisasi()
+    {
+        return $this->NamaOrganisasi;
+    }
+    protected function get_tahun()
+    {
+        return $this->TahunGabung;
+    }
+
 
 }
 
-$fauzan = new organisasi('fzn', '2255201023', 'PBO', 'menjadi power ranger putih');
+$fauzan = new organisasi('fzn', '2255201023', 'PBO', 'menjadi power ranger putih','rangers community','*888#');
 $fauzan->uhuy();
 
 ?>
