@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-
-
 <?php
 class Mahasiswa {
   // Properties
@@ -31,25 +25,33 @@ class Mahasiswa {
     return $this->nim;
   }
   
-  function get_matkul() {
+  protected function get_matkul() {
     return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
     return $this->cita_cita;
+  }
+  function __destruct() {
+    echo "\nini akhir dari class mahasiswa {$this->name}.";
   }
 }
 
 
-$nisa = new mahasiswa('nisa', '2255201004', 'PBO', 'penyanyi');
+//class turunan organisasi
+class organisasi extends mahasiswa {
+    function hima() {
+        echo "Name: " . $this->get_name();
+        echo "\n";
+        echo "Nim: " . $this->get_nim ();
+        echo "\n";
+        echo "Matkul: " . $this->get_matkul ();
+        echo "\n";
+        echo "Cita-cita: " . $this->get_cita_cita();
+        echo "\n";
+        echo "Organisasi : Find a Problem"; 
+  }
+}
+$nisa = new organisasi('Khairunnisa', '2255201004', 'PBO', 'penyanyi');
+$nisa->Hima();
 
-echo "Name: " . $nisa->get_name();
-echo "\n";
-echo "nim: " . $nisa->get_nim();
-echo "\n";
-echo "matkul: " . $nisa->get_matkul();
-echo "\n";
-echo "citacita: " . $nisa->get_cita_cita();
 ?>
- 
-</body>
-</html>
