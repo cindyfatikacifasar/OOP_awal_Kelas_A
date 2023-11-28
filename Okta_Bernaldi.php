@@ -5,14 +5,14 @@
 <?php
 class mahasiswa {
   // Properties
-  private $okta;
+  private $name;
   private $nim;
   private $matkul;
   private $cita_cita;
 
   // Methods
-  function __construct ($okta, $nim, $matkul, $cita_cita){
-  	$this->name = $okta;
+  function __construct ($name, $nim, $matkul, $cita_cita){
+  	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita_cita = $cita_cita;
@@ -23,15 +23,20 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
+  function __destruct() {
+    echo "<br> ini adalah akhir dari class mahasiswa dari {$this->name}";
+  }
 }
-
-$okta = new mahasiswa('Okta Bernaldi', '2255201051', 'pbo', 'Pilot');
+  class organisasi extends mahasiswa
+    {
+      function hima() 
+{
 echo $okta->get_name();
 echo "<br>";
 echo $okta->get_nim();
@@ -39,7 +44,11 @@ echo "<br>";
 echo $okta->get_matkul();
 echo "<br>";
 echo $okta->get_cita_cita();
+echo "<br>";
+echo "Organisasi: Hima";
 
+$okta = new mahasiswa('Okta Bernaldi', '2255201051', 'pbo', 'Pilot');
+$okta->hima();
 ?>
  
 </body>
