@@ -35,6 +35,7 @@ class mahasiswa {
 }
  class organisasi extends mahasiswa
    {
+  function hima() {
 echo $syfq->get_name();
 echo "<br>";
 echo $syfq->get_nim();
@@ -44,7 +45,8 @@ echo "<br>";
 echo $syfq->get_cita_cita();
 echo "<br>";
 echo "Organisasi: Hima";
-
+  }
+}
 $syfq = new mahasiswa('muhammad Syafiq firdaus Affan', '2255201025', 'pbo', 'mentri');
 $syfq->hima();
 ?>
