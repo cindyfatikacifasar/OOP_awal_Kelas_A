@@ -10,11 +10,13 @@ class mahasiswa
     private $matkul;
     private $cita;
     // Methods
-    function __construct ($name, $nim, $matkul, $cita){
+    function __construct ($name, $nim, $matkul, $cita, $organisasi, $tahungabung){
   	$this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->cita = $cita;
+    $this->organisasi = $organisasi;
+    $this->tahungabung = $tahungabung;
     }
     function get_name()
     {
@@ -32,12 +34,25 @@ class mahasiswa
     {
   	    return $this->cita;
     }
-    function __destruct() {
-        echo "<br>Ini akhir dari class mahasiswa {$this->name}";
+    protected function get_organisasi()
+    {
+        return $this->organisasi;
     }
+    protected function get_tahungabung()
+    {
+        return $this->tahungabung
+    }
+    function namatahun() {
+    echo "\n";
+    echo "Organisasi: " . $this->get_organisasi();
+    echo "\n";
+    echo "Tahun Gabung: " . $this->get_tahun();
+  }
 }
     class organisasi extends mahasiswa
     {
+    protected $Organisasi;
+    protected $TahunGabung;
     function hima()
     {
      echo "Nama: " . $Furrz->get_name();
@@ -48,7 +63,9 @@ class mahasiswa
      echo "<br>";
      echo "Cita-Cita: " . $Furrz->get_cita();
      echo "<br>";
-     echo "Organisasi: HIMA";
+     echo "Organisasi: " . $this->get_organisasi();
+     echo "<br>";
+     echo "Tahun Gabung: " . $this->get_tahungabung;
     }
 }       
 $Furrz = new mahasiswa('Furqon Kurnia', '2255201018', 'pbo', 'Hack Bank Israel');
