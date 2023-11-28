@@ -24,15 +24,15 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
   }
 }
-
-$bayu = new mahasiswa('bayu aji lubis', '2255201014', 'PBO', 'Dokter');
+class organisasi extends mahasiswa{
+function hima(){
 echo $bayu->get_name();
 echo "<br>";
 echo $bayu->get_nim();
@@ -40,6 +40,13 @@ echo "<br>";
 echo $bayu->get_matkul();
 echo "<br>";
 echo $bayu->get_cita_cita();
+echo "<br>";
+echo "organisasi: Hima";
+}
+}
+
+$bayu = new mahasiswa('bayu aji lubis', '2255201014', 'PBO', 'Dokter');
+$bayu->hima()
 ?>
  
 </body>
