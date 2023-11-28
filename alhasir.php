@@ -22,25 +22,35 @@ class mahasiswa {
   function get_nim() {
     return $this->nim;
   }
-  function get_matkul() {
+  protected function get_matkul() {
   	return $this->matkul;
   }
-  function get_cita_cita() {
+  protected function get_cita_cita() {
   	return $this->cita_cita;
+  }
+  function __destruct() {
+    echo "<br> ini akhir dari class mahasiswa {$this->name}.";
   }
 }
 
-$alhashir = new mahasiswa('alhashir', '2255201024', 'pbo', 'menjadi boboiboy');
-echo $alhashir->get_name();
-echo "<br>";
-echo $alhashir->get_nim();
-echo "<br>";
-echo "nim: " .  $alhashir->get_nim();
-echo $alhashir->get_matkul();
-echo "<br>";
-echo "matkul: " . $alhashir->get_matkul();
-echo $alhashir->get_cita_cita();
+//class turunan organisasi
+class organisasi extends mahasiswa {
+      function hima() {
+          echo "Name: " . $this->get_name();
+          echo "<br>";
+          echo "Nim: " . $this->get_nim ();
+          echo "<br>";
+          echo "matkul: " . $this->get_matkul();
+          echo "<br>";
+          echo "Cita-Cita: " . $this->get_citacita();
+          echo "<br>";
+          echo "Organisasi : HIMA"; 
+    }
+ 
+}
 
+$alhashir = new organisasi('alhashir', '2255201024', 'pbo', 'menjadi boboiboy');
+$alhashir->hima();
 ?>
 
 </body>
