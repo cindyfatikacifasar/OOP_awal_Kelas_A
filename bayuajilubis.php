@@ -32,20 +32,41 @@ class mahasiswa {
   }
 }
 class organisasi extends mahasiswa{
-function hima(){
-echo $bayu->get_name();
-echo "<br>";
-echo $bayu->get_nim();
-echo "<br>";
-echo $bayu->get_matkul();
-echo "<br>";
-echo $bayu->get_cita_cita();
-echo "<br>";
-echo "organisasi: Hima";
-}
+  protected $organisasi;
+  protected $tahungabung;
+  function hima(){
+    echo "Nama: " . $this->get_name();
+    echo "<br>";
+    echo "nim: " .  $this->get_nim();
+    echo "<br>";
+    echo "matkul: " . $this->get_matkul();
+    echo "<br>";
+    echo "Cita-Cita: " . $this->get_cita_cita();
+    echo "<br>";
+    echo "Organisasi: " . $this->get_organisasi();
+    echo "<br>";
+    echo "Tahun Gabung: " . $this->get_tahungabung();
+  }
+  function __construct($name, $nim, $matkul, $cita_cita, $organisasi, $tahungabung) {
+    parent::__construct($name, $nim, $matkul, $cita_cita) ;
+    $this->organisasi = $organisasi;
+    $this->tahungabung = $tahungabung;
+  }
+  protected function get_organisasi() {
+    return $this->organisasi;
+  }
+  protected function get_tahungabung() {
+    return $this->tahungabung;
+  }
+  function namatahun() {
+    echo "<br>";
+    echo "Organisasi: " . $this->get_organisasi();
+    echo "<br>";
+    echo "Tahun Gabung: " . $this->get_tahungabung();
+  }
 }
 
-$bayu = new mahasiswa('bayu aji lubis', '2255201014', 'PBO', 'Dokter');
+$bayu = new organisasi('bayu aji lubis', '2255201014', 'PBO', 'DPR RI', 'PDI Perjuangan', '2019');
 $bayu->hima()
 ?>
  
