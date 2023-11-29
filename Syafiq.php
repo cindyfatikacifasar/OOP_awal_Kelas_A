@@ -47,10 +47,10 @@ class organisasi extends mahasiswa{
     echo "<br>";
     echo "Organisasi: " . $this->get_organisasi();
     echo "<br>";
-    echo "Tahun Gabung: " . this->get_tahunGabung()
+    echo "Tahun Gabung: " .$this->get_tahunGabung();
   }
-  function __construct($name, $nim, $matkul, $cita, $organisasi, $tahunGabung) {
-    parent::__construct($name, $nim, $matkul, $cita) ;
+  function __construct($name, $nim, $matkul, $cita_cita, $organisasi, $tahunGabung) {
+    parent::__construct($name, $nim, $matkul, $cita_cita) ;
     $this->organisasi = $organisasi;
     $this->tahunGabung = $tahunGabung;
   }
