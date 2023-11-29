@@ -36,21 +36,40 @@ class mahasiswa {
  }
 class organisasi extends mahasiswa
   {
-    function hima
+    protected $organisasi;
+    protected $tahungabung;
+    function hima()
     {
-echo $Jefri->get_name();
+echo "Nama: " . $this->get_name();
 echo "<br>";
-echo $Jefri->get_nim();
+echo "NIM: " . $this->get_nim();
 echo "<br>";
-echo $Jefri->get_matkul();
+echo "Matkul: " . $this->get_matkul();
 echo "<br>";
-echo $Jefri->get_citacita();
-echo "<br">;
-echo "Organisasi: Hima";
+echo "Cita-Cita: " . $this->get_citacita();
+echo "<br>";
+echo "Organisasi: " . $this->get_organisasi();
+     }
+       function __construct($name, $nim, $matkul, $citacita, $organisasi, $tahungabung) {
+       parent::__construct($name, $nim, $matkul, $citacita);
+       $this->organisasi = $organisasi;
+       $this->tahungabung = $tahungabung;
+     }
+protected function get_organisasi() {
+  return $this->organisasi;
 }
-  }
+protected function get_tahungabung() {
+  return $this->tahungabung;
+}
+function namatahun() {
+  echo "<br>";
+  echo "Organisasi: " . $this->get_organisasi();
+  echo "<br>";
+  echo "Tahun Gabung: " . $this->get_tahungabung();
+}
+     }
 
-$Jefri = new mahasiswa('Jefrinaldi', '2255201021', 'pbo', 'Hebaatt');
+$Jefri = new organisasi('Jefrinaldi', '2255201021', 'pbo', 'Hebaatt', 'PKI Sampai Mati', '2022');
 $Jefri->hima();
 
 ?>
