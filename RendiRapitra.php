@@ -33,22 +33,44 @@ class mahasiswa {
     echo "<br> Ini akhir dari class mahasiswa {$this->name}";
   }
 }
-  class organisasi extends mahasiswa 
+  //Class Turunan Organisasi
+    class organisasi extends mahasiswa
     {
-      function hima
+  protected $organisasi;
+  protected $tahungabung;
+  function hima()
     {
-      echo $Rendi->get_name();
-  echo "<br>";
-  echo $Rendi->get_nim();
-  echo "<br>";
-  echo $Rendi->get_matkul();
-  echo "<br>";
-  echo $Rendi->get_cita_cita();
-  echo "<br>";
-  echo "Organisasi: Hima";
-    }
+   echo "Nama: " . $this->get_name();
+   echo "<br>";
+   echo "nim: " .  $this->get_nim();
+   echo "<br>";
+   echo "matkul: " . $this->get_matkul();
+   echo "<br>";
+   echo "Cita-Cita: " . $this->get_cita_cita();
+   echo "<br>";
+   echo "Organisasi: " . $this->get_organisasi();
+   echo "<br>";
+   echo "Tahun Gabung: " . $this->get_tahungabung();
 }
-$Rendi = new mahasiswa('Rendi Rapitra', '2255201029', 'pbo', 'Main Bola');
+   function __construct($name, $nim, $matkul, $cita_cita, $organisasi, $tahungabung) {
+   parent::__construct($name, $nim, $matkul, $cita_cita) ;
+   $this->organisasi = $organisasi;
+   $this->tahungabung = $tahungabung;
+}
+   protected function get_organisasi() {
+      return $this->organisasi;
+}
+   protected function get_tahungabung() {
+      return $this->tahungabung;
+}
+   function namatahun() {
+   echo "<br>";
+   echo "Organisasi: " . $this->get_organisasi();
+   echo "<br>";
+   echo "Tahun Gabung: " . $this->get_tahungabung();
+  }
+}       
+$Rendi = new organisasi('Rendi Rapitra', '2255201029', 'pbo', 'Main Bola', 'Olahraga', '2022');
 $Rendi->hima();
 
 ?>
