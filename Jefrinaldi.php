@@ -40,15 +40,15 @@ class organisasi extends mahasiswa
     protected $tahungabung;
     function hima()
     {
-     echo "Nama: " . $this->get_name();
-     echo "<br>";
-     echo "NIM: " . $this->get_nim();
-     echo "<br>";
-     echo "Matkul: " . $this->get_matkul();
-     echo "<br>";
-     echo "Cita-Cita: " . $this->get_citacita();
-     echo "<br>";
-     echo "Organisasi: " . $this->get_organisasi();
+echo "Nama: " . $this->get_name();
+echo "<br>";
+echo "NIM: " . $this->get_nim();
+echo "<br>";
+echo "Matkul: " . $this->get_matkul();
+echo "<br>";
+echo "Cita-Cita: " . $this->get_citacita();
+echo "<br>";
+echo "Organisasi: " . $this->get_organisasi();
      }
        function __construct($name, $nim, $matkul, $citacita, $organisasi, $tahungabung) {
        parent::__construct($name, $nim, $matkul, $citacita);
