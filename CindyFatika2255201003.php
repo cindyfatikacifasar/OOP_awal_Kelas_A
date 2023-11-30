@@ -13,12 +13,13 @@ class Mahasiswa {
   private $citacita;
 
   // Methods
-  function_construct($name, $nim, $matkul, $citacita) {
+  function __construct($name, $nim, $matkul, $citacita) {
     $this->name = $name;
     $this->nim = $nim;
     $this->matkul = $matkul;
     $this->citacita = $citacita;
   }
+  
   function get_name() {
     return $this->name;
   }
@@ -27,24 +28,39 @@ class Mahasiswa {
     return $this->nim;
   }
 
-  function get_matkul() {
+  protected function get_matkul() {
     return $this->matkul;
   }
-  function get_citacita() {
+  protected function get_citacita() {
     return $this->citacita;
+  }
+
+
+   function __destruct() {
+    echo "<br> ini akhir dari class mahasiswa {$this->name}.";
   }
 }
 
-$cindy = new Mahasiswa(cindy','2255201003','PBO','Pilotkereta');
+//class turunan organisasi
+class organisasi extends mahasiswa {
+      function bem() {
+          echo "Name: " . $this->get_name();
+          echo "<br>";
+          echo "Nim: " . $this->get_nim ();
+          echo "<br>";
+          echo "matkul: " . $this->get_matkul();
+          echo "<br>";
+          echo "Cita-Cita: " . $this->get_citacita();
+          echo "<br>";
+          echo "Organisasi : BEM"; 
+    }
+ 
+}
+
+$cindy = new organisasi('CindyFatika','2255201003','PBO','Pilotkereta');
+$cindy->bem();
 
 
-echo 'Nama : ' . $cindy->get_name();
-echo "<br>";
-echo 'nim: ' . $nim->get_name();
-echo "<br>";
-echo 'matkul: ' . $matkul->get_name();
-echo "<br>";
-echo 'citacita: ' . $cindy->get_citacita();
 ?>
  
 </body>
